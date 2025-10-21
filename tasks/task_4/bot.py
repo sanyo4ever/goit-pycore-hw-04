@@ -11,7 +11,10 @@ def parse_input(user_input):
     Returns:
         tuple: (команда, список аргументів)
     """
-    cmd, *args = user_input.split()
+    parts = user_input.split()
+    if not parts:
+        return "", []
+    cmd, *args = parts
     cmd = cmd.strip().lower()
     return cmd, args
 
